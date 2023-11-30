@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <title>Birthday Countdown</title>
+</head>
+<body>
+
+<div id="countdown-container">
+  <div class="countdown-heading">Birthday Countdown Timer</div>
+  <div id="countdown" class="timer-container">
+    <div class="timer">
+      <div class="timer-value" id="days">00</div>
+      <div class="timer-label" id="days-label">Days</div>
+    </div>
+    <div class="timer">
+      <div class="timer-value" id="hours">00</div>
+      <div class="timer-label" id="hours-label">Hours</div>
+    </div>
+    <div class="timer">
+      <div class="timer-value" id="minutes">00</div>
+      <div class="timer-label" id="minutes-label">Minutes</div>
+    </div>
+    <div class="timer">
+      <div class="timer-value" id="seconds">00</div>
+      <div class="timer-label" id="seconds-label">Seconds</div>
+    </div>
+  </div>
+
+  <div id="birthday-message"></div>
+
+  <!-- Confetti animation -->
+  <div class="confetti" style="top: 10%; left: 10%;"></div>
+  <div class="confetti" style="top: 20%; left: 20%;"></div>
+  <div class="confetti" style="top: 30%; left: 30%;"></div>
+  <div class="confetti" style="top: 40%; left: 40%;"></div>
+  <div class="confetti" style="top: 50%; left: 50%;"></div>
+  <div class="confetti" style="top: 60%; left: 60%;"></div>
+  <div class="confetti" style="top: 70%; left: 70%;"></div>
+  <div class="confetti" style="top: 80%; left: 80%;"></div>
+
+  <!-- Twinkling stars -->
+  <div class="twinkling-star" style="top: 5%; left: 5%;"></div>
+  <div class="twinkling-star" style="top: 15%; left: 15%;"></div>
+  <div class="twinkling-star" style="top: 25%; left: 25%;"></div>
+  <div class="twinkling-star" style="top: 35%; left: 35%;"></div>
+  <div class="twinkling-star" style="top: 45%; left: 45%;"></div>
+  <div class="twinkling-star" style="top: 55%; left: 55%;"></div>
+  <div class="twinkling-star" style="top: 65%; left: 65%;"></div>
+  <div class="twinkling-star" style="top: 75%; left: 75%;"></div>
+  <div class="twinkling-star" style="top: 85%; left: 85%;"></div>
+
+  <!-- Birthday banner -->
+        <a href="final.html"><div class="birthday-banner">4-DEC-2023!</div></a>
+  
+
+</div>
+
+<script>
+  const countDownDate = new Date('December 4, 2023 00:00:00').getTime();
+
+  // Update the countdown every 1 second
+  const x = setInterval(function() {
+    // Get the current date and time
+    const now = new Date().getTime();
+
+    // Calculate the remaining time
+    const distance = countDownDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Format the values with leading zeros
+    const formattedDays = String(days).padStart(2, '0');
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(seconds).padStart(2, '0');
+
+    // Display the countdown in the "DD:HH:MM:SS" format
+    document.getElementById('days').innerText = formattedDays;
+    document.getElementById('hours').innerText = formattedHours;
+    document.getElementById('minutes').innerText = formattedMinutes;
+    document.getElementById('seconds').innerText = formattedSeconds;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById('countdown').innerHTML = 'Happy Birthday!';
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>

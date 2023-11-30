@@ -1,0 +1,178 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #135f5e;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in-out;
+}
+ 
+body:hover {
+  background-color: #4982bb; /* Change background color on hover */
+}
+
+#countdown-container {
+  text-align: center;
+  position: relative;
+  border: 2px solid #bb4d4d;
+  border-radius: 10px;
+  padding: 40px;
+  overflow: visible; /* Adjusted overflow to make decorations visible */
+  animation: pulse 1s infinite alternate;
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  font-size: 2em;
+  color: #ecf31fba;
+  transition: color 0.5s ease-in-out;
+}
+
+.timer-value {
+  margin-bottom: 5px;
+}
+
+.timer-label {
+  color: #fff;
+}
+
+.countdown-heading {
+  color: rgb(65, 250, 173);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 10px;
+}
+
+#birthday-message {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.5em;
+  opacity: 0;
+  animation: fadeIn 2s forwards 2s;
+}
+
+@keyframes pulse {
+  0% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: #ffcc66;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Confetti animation */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffc107;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: confetti-fall 4s linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Twinkling stars */
+.twinkling-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+/* Birthday banner */
+.birthday-banner {
+  position: absolute;
+  width: 100%;
+  top: -40px; /* Adjusted position to make the banner visible */
+  left: 0%;
+  transform: translateX(-50%);
+  color: #ffcc66;
+  font-size: 2em;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+}
+ 
+.birthday-banner:hover{
+  color: beige;
+}
+  
+  
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hover styles for the countdown container */
+#countdown-container:hover {
+  background-color: rgba(241, 17, 230, 0.973);/* Change background color on hover */
+  border-color: #1aa890; /* Change border color on hover */
+}
+
+#countdown-container:hover .timer {
+  color: #000; /* Change timer text color on hover */
+}
+
+#countdown-container:hover #birthday-message {
+  color: #000; /* Change message text color on hover */
+}
+
+.element-with-multicolor-border {
+  width: 200px;
+  height: 200px;
+  border: 20px solid;
+  border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  border-image-slice: 1;
+  border-image-width: 20px;
+}
