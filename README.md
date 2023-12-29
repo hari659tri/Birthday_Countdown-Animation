@@ -13,6 +13,9 @@ I'm a Harikesh tripathi this project is made for my own bithday as a gift ...
 
 
 ## Screenshots
-![App Screenshot](https://snipboard.io/RteprH.jpg)
+![App Screenshot](https://snipboard.io/rOveRg.jpg)
+![App Screenshot](https://snipboard.io/ejXyLY.jpg)
 ![App Screenshot](https://snipboard.io/aK3BpA.jpg)
 ![App Screenshot](https://snipboard.io/dCUkoG.jpg)
+
+![App Screenshot]()
